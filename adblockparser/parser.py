@@ -269,7 +269,7 @@ class AdblockRule(object):
 
         # other | symbols should be escaped
         # we have "|$" in our regexp - do not touch it
-        rule = re.sub("(\|)[^$]", r"\|", rule)
+        rule = re.sub("(\|)(?!\$)", '\|', rule)
 
         return rule
 
